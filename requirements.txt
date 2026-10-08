@@ -1,0 +1,2 @@
+# Installazione base, senza PyTorch e senza hardware MIDI.
+-e .

@@ -1,0 +1,2 @@
+# Opzionale: solo quando si sviluppa il backend PyTorch.
+-e .[torch]

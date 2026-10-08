@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "JazzGPT: genera demo MIDI",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "jazzgpt",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "args": ["generate", "--bars", "8", "--bpm", "120", "--seed", "42", "--output", "renders/demo.mid", "--tokens", "renders/demo.tokens.json"],
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "JazzGPT: diagnostica Mac",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "jazzgpt",
+      "python": "${workspaceFolder}/.venv/bin/python",
+      "cwd": "${workspaceFolder}",
+      "args": ["doctor"],
+      "console": "integratedTerminal"
+    }
+  ]
+}

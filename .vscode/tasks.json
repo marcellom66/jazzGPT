@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "JazzGPT: prepara ambiente",
+      "type": "process",
+      "command": "bash",
+      "args": ["scripts/bootstrap_macos.sh"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    },
+    {
+      "label": "JazzGPT: genera demo",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": ["-m", "jazzgpt", "generate", "--tokens", "renders/demo.tokens.json"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "group": {"kind": "build", "isDefault": true},
+      "problemMatcher": []
+    },
+    {
+      "label": "JazzGPT: test",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/python",
+      "args": ["-m", "pytest", "-q"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "JazzGPT: lint",
+      "type": "process",
+      "command": "${workspaceFolder}/.venv/bin/ruff",
+      "args": ["check", "src", "tests", "examples"],
+      "options": {"cwd": "${workspaceFolder}"},
+      "problemMatcher": []
+    }
+  ]
+}
